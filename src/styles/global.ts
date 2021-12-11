@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     --background: ${COLORS.BACKGROUND};
     --shape: ${COLORS.WHITE};
 
+    --green: ${COLORS.GREEN};
     --red: ${COLORS.RED};
     --blue: ${COLORS.BLUE};
     --blue-light: ${COLORS.BLUE_LIGHT};
