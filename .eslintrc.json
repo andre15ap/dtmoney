@@ -1,0 +1,146 @@
+{
+    "parser": "babel-eslint", // parser que permite lintar todo o código suportado pelo babel
+    "env": {
+        "browser": true, // permite vars globais de browsers
+        "es2021": true // permite recursos do ES2021
+    },
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module", // habilita suporte a ECMAScript modules
+        "ecmaFeatures": {
+            "jsx": true, // suporte a JSX
+            "tsx": true
+        }
+    },
+    "plugins": [
+        "react" // habilita plugin `eslint-plugin-react` (deve ser instalado)
+    ],
+    "rules": { // all rules are disabled by default (veja "eslint:recommended" abaixo)
+        "no-var": "error", // proíbe criação de variáveis de escopo de função (var), utilizar apenas variáveis de escopo de bloco (let, const).
+        "arrow-parens": [ // sem () no argumento quando tivermos apenas 1 argumento
+            "error",
+            "as-needed"
+        ],
+        "react/react-in-jsx-scope": "off", // desabilita necessidade de importar React em arquivos jsx
+        "camelcase": [ // exige camelCase
+            "error",
+            {
+                "properties": "never"
+            }
+        ],
+        "comma-dangle": [ // exige "," em {}s e []s multi line e proíbe em single line
+            "error",
+            "always-multiline"
+        ],
+        "dot-location": [ // exige que newlines sejam antes do ponto numa *member expression* (ponto fica junto com propriedade).
+            "error",
+            "property"
+        ],
+        "eqeqeq": [ // exige comparação estrita (===) salvo em alguns casos (http://eslint.org/docs/rules/eqeqeq)
+            "error",
+            "smart"
+        ],
+        "indent": [ // exige indentação de 2 espaços; exige 1 nível de indentação para cases de um switch
+            "error",
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [ // proíbe quebras de linha do Windows
+            "error",
+            "unix"
+        ],
+        // "no-console": "error", // proíbe chamadas console.*()
+        "no-else-return": "error", // proíbe "else" desnecessario quando "if" já tem "return"
+        "no-unused-vars": [ // exige que todas as vars e erros capturados sejam usados, e que ao menos o último argumento de função seja usado
+            "warn",
+            {
+                "vars": "all",
+                "args": "after-used",
+                "caughtErrors": "all",
+                "varsIgnorePattern": "^_$",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "quotes": [ // exige aspa simples para strings e não reclama de "aspas 'assim'"
+            "error",
+            "single",
+            "avoid-escape"
+        ],
+        "semi": [ // exige ";"
+            "error",
+            "always"
+        ],
+        "strict": [ // warn pedindo que todo código esteja no strict mode (declaração no escopo global, reclama de "use strict"s redundantes)
+            "warn",
+            "global"
+        ],
+        "eol-last": [ // requer arquivos terminem com uma linha vazia (prática UNIX)
+            "error",
+            "always"
+        ],
+        "curly": "error", // exige chaves ( { e } ) em todos os blocos, para melhor claridade e menor risco de erros
+        "brace-style": "error", // exige que o início e fim de blocos fiquem em linhas separadas do código do bloco
+        "no-use-before-define": "warn", // exige que o uso de funções, classes e variáveis seja feito apenas após elas terem sido declaradas
+        "space-infix-ops": [ // exige espaçamento entre operadores
+            "error",
+            {
+                "int32Hint": true
+            }
+        ],
+        "space-before-blocks": "error", // exige espaço antes de abrir blocos (function {})
+        "keyword-spacing": "error", // exige espaçamento ao redor de keywords (if, switch, while, ...)
+        "no-trailing-spaces": "error", // exige que não tenham espaços em branco perdidos no final da linha
+        "key-spacing": "error", // exige espaçamento entre chave e valor (chave: valor)
+        "object-curly-spacing": [ // exige espaçamento dentro das chaves da declaração de objetos
+            "error",
+            "always"
+        ],
+        "space-before-function-paren": [ // exige espaçamento do parênteses da keyword function quando anônima
+            "error",
+            {
+                "anonymous": "always",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "func-call-spacing": [ // exige que não tenha espaço entre nome e parênteses de invocação da função
+            "error",
+            "never"
+        ],
+        "space-in-parens": [ // exige que não tenha espaço entre parênteses de invocação de função
+            "error",
+            "never"
+        ],
+        "semi-spacing": [ // exige que não tenha espaço antes do ; e que tenha espaço após caso houver algo depois
+            "error",
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "comma-spacing": [ // exige que não tenha espaço antes do , e que tenha espaço após caso houver algo depois
+            "error",
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "no-multi-spaces": [ // exige que não tenha múltiplos espaços seguidos, que são desnecessários
+            "error",
+            {
+                "ignoreEOLComments": true
+            }
+        ]
+    },
+    "extends": [ // extende conf. com a de outros arquivos (últimos tem primazia)
+        "eslint:recommended", // habilita rules recomendadas (ver essas em <http://eslint.org/docs/rules/>)
+        "plugin:react/recommended" // habilita rules recomendadas pelo plugin p/ boas práticas de React (inclusive "jsx-uses-vars" que evita vars JSX de serem incorretamente marcadas como não usadas)
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}
