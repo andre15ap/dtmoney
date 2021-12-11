@@ -1,0 +1,10 @@
+export const COLORS = {
+  BLUE: '#5429CC',
+  BLUE_LIGHT: '#6933ff',
+  GREEN: '#33CC95',
+  RED: '#E52E4D',
+  TITLE: '#363F5F',
+  TEXT: '#969CB2',
+  BACKGROUND: '#F0F2F5',
+  WHITE: '#FFFFFF',
+};
